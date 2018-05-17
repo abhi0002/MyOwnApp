@@ -1,0 +1,13 @@
+
+<div class="col-lg-5">
+    <app-recipes-list
+    (recipeHereClicked) = "recipeFromList = $event" ></app-recipes-list>
+</div>
+<div class="col-lg-5">
+    <app-recipes-details
+    *ngIf="recipeFromList; else infoText"
+    [detailOfRecipe]="recipeFromList"></app-recipes-details>
+    <ng-template #infoText >
+      <p>Please Select a recipe</p>
+    </ng-template>
+</div>

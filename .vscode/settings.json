@@ -1,0 +1,16 @@
+{
+    "editor.cursorStyle": "line-thin",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "files.associations": {},
+    "diffEditor.renderIndicators": true,
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.accessibilitySupport": "auto",
+    "git.ignoreLimitWarning": true
+}

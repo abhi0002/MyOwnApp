@@ -1,0 +1,11 @@
+<p>
+    test works! Welcome {{name}}
+</p>
+
+<h4> UpperCase = {{name.toUpperCase()}}</h4>
+{{greetUser()}}
+
+<input [id]="myId" type="text">
+<input id="{{myId}}" type="text">
+<input disabled="false" type="text" value="HELLO"> //works only with string values ,So the above is not disabled
+<input [disabled]="isDisabled" type="text" value="HELLO">

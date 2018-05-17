@@ -1,0 +1,16 @@
+<div class=" row">
+  <div class=" col-md-4 col-md-offset-4 container border" style="background-color:#cac1c1;">
+    <h2>Add User</h2>
+    <form #myform ="ngForm" nonvalidate>
+      <div class="form-group ">
+        <label for="usr">Name:</label>
+        <input required name="userName" class="form-control" type="text" [(ngModel)]="user.username" placeholder="Enter Your Name">
+      </div>
+      <div class="form-group ">
+        <label for="pwd">Password:</label>
+        <input required name="password" class="form-control" type="password" [(ngModel)]= "user.password" minlength="8" placeholder="Enter password">
+      </div>
+      <button [disabled]="!myform.valid" type='submit' (click)="searchName(user.username , user.password)" class="btn btn-link pull-right">Click</button>
+    </form>
+  </div>
+</div>

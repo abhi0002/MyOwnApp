@@ -1,0 +1,91 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">User App</a>
+    </div>
+    <div class="navbar-default ">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#"> 1st</a>
+        </li>
+        <li>
+          <a href="#"> 1st</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" role="button">Manage</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#"></a>Save Date </li>
+            <li>
+              <a href="#"></a>Fetch </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class=" row">
+  <div class=" col-md-4 col-md-offset-4 container border" style="background-color:#cac1c1;">
+    <h2>Add User</h2>
+    <form #myform="ngForm" (ngSubmit)=onSubmitAddUser() nonvalidate>
+      <div class="form-group ">
+        <label for="usr">Name:</label>
+        <input required name="userName" class="form-control" type="text" [(ngModel)]="user.username" placeholder="Enter Your Name">
+      </div>
+      <div class="form-group ">
+        <label for="pwd">Password:</label>
+        <input required name="password" class="form-control" type="password" [(ngModel)]="user.password" minlength="8" placeholder="Enter password">
+      </div>
+      <button [disabled]="!myform.valid" type='submit' (click)="addUser(); myform.reset()" class="btn btn-success pull-right">Test Button</button>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">UserName</th>
+        <th class="text-center">Password</th>
+        <th class="text-center">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of finalList; let i = index">
+        <td class="text-center">{{item.username}}</td>
+        <td class="text-center">{{item.password}}</td>
+        <td class="text-center">
+          <div class="btn-group">
+            <button class="btn btn-primary" (click)="ngxSmartModalService.getModal('myModal').open(); editData(i)" data-toggle="modal"
+              data-target="#exampleModal">Edit</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-primary" (click)="deleteData(i)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<ngx-smart-modal #myModal [identifier]="'myModal'">
+  <form #modalForm="ngForm" (ngSubmit)=onSubmitAddUser() nonvalidate>
+    <div class="form-group ">
+      <label for="usr">Name:</label>
+      <input name="userName" class="form-control" type="text" [(ngModel)]="editUser.username">
+    </div>
+    <div class="form-group ">
+      <label for="pwd">Password:</label>
+      <input required name="password" class="form-control" type="text" [(ngModel)]="editUser.password">
+    </div>
+  </form>
+  <button (click)="saveData()" >Save</button>
+  <button (click)="myModal.close()">Close</button>
+</ngx-smart-modal>
+

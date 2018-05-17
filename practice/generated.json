@@ -1,0 +1,29 @@
+[
+  {
+    "id": "usr1",
+    "firstName": "Milind",
+    "lastName": "patel",
+    "email": "harry@gmail.com",
+    "password": "harry123",
+    "mobile": 7896541455,
+    "gender": "male"
+  },
+  {
+    "id": "usr2",
+    "firstName": "member",
+    "lastName": "test",
+    "email": "logitech@mailinator.com",
+    "password": "logitech123",
+    "mobile": 8767898763,
+    "gender": "male"
+  },
+  {
+    "_id": "usr3",
+    "firstName": "Shivani",
+    "lastName": "das",
+    "email": "shivani@mailinator.com",
+    "password": "shivani123",
+    "mobile": 7896541455,
+    "gender": "male"
+  }
+]
