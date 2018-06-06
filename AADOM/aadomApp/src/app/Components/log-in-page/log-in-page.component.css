@@ -1,0 +1,184 @@
+/*Start: Universal Styling */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@font-face {
+     font-family: "utsaah";
+    src: url(/assets/fonts/utsaah/utsaah.ttf);
+}
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: 'utsaah' !important;
+    height:100%;
+}
+
+a,
+a:hover {
+    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+p {
+    margin: 0;
+}
+
+html,
+body,
+section,
+div,
+span,
+aside,
+main,
+table,
+td,
+th,
+li,
+p,
+a,
+label,
+input,
+textarea,
+select,
+option {
+    font-family: 'utsaah' !important;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Ubuntu', sans-serif !important;
+
+}
+a,
+a:hover,
+a:visited,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+.p0{
+    padding: 0px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #acb4c7;
+    opacity: 1; /* Firefox */
+    font-size: 20px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #acb4c7;
+    font-size: 20px;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #acb4c7;
+    font-size: 20px;
+}
+/*End: Universal Styling */
+
+.logo {
+  text-align: center;
+  margin-top:-40px;
+}
+.logo img {
+    width:235px;
+}
+
+/* start: login page; */
+
+.login_wrapper{
+    width:500px;
+    margin:0 auto;
+}
+
+#main-login{
+    background-image: url("/assets/images/background2.jpg");
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.entry-group{
+    padding:0px 20px;
+}
+#main-login .input-icon {
+    border-bottom: 1px solid #59698d;
+    margin: 10px 0px;
+    padding: 20px 0px 0 15px;
+    font-size: 20px;
+}
+#main-login .inputaddon img {
+    width: 25px;
+}
+#main-login .inputform {
+    background-color: transparent;
+    box-shadow: unset;
+    border-bottom: unset;
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    width:100%;
+}
+
+.btn_signin {
+       background-color: #fff;
+    padding: 3px 80px;
+    text-align: center;
+    color: #59698d;
+    font-size: 25px;
+    margin-top: 30px;
+    border: unset;
+    font-weight: 500;
+    border-radius:20px;
+    box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.1), 0 3px 9px 0 rgba(0, 0, 0, 0.10);
+}
+.logintext_wrap {
+   padding: 0px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form.form-signin {
+    padding: 2px 0px;
+}
+.login-heading {
+    color: #59698d;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+#main-login .inputform:focus{
+    outline: none;
+}
+
+.inputlabel {
+    font-weight: 500;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.btn-sign, .backToSignin{
+     color:  #1a1a1a;
+     font-size: 15px;
+     font-weight: 600;
+}
+#main-login  span.inputaddon {
+    line-height: 3;
+}
+.btn-account_sign {
+    color: #b80011;
+    font-size: 13px;
+}
+.btn_signin:focus{
+ outline:none;
+}
+/* End: login page; */
