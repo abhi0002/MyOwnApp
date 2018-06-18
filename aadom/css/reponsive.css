@@ -1,1 +1,20 @@
 
+@media only screen and (max-width: 768px) {  
+		.analytic_box {
+		    margin: 25px 0px 50px;
+		 }
+		 .analyticbox_content::after {
+		    bottom: 68%;
+      }
+      .analyticbox_content {
+		    width: auto;
+        }
+
+}
+
+
+@media only screen and (max-width: 360px) {  
+	.logo_head img {
+	    width: 150px;
+	}
+}

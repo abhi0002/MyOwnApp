@@ -1,0 +1,51 @@
+<app-header></app-header>
+<section *ngIf="flagEvent" id="main-landing" class="bg_grey">
+  <div id="landing_pagesec" class="landing_wrapper">
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table_view_land">
+          <thead>
+            <tr>
+              <th>Weblink EventId</th>
+              <th>ON24EventId</th>
+              <th>Event Import Timestamp</th>
+              <th>Import Status Code</th>
+              <th>Import Status</th>
+              <th>Registrants Details</th>
+            </tr>
+          </thead>
+          <tbody *ngFor='let user of pagedItems' >
+            <tr>
+              <td>{{user.weblinkEventId }}</td>
+              <td>{{user.on24EventId}}</td>
+              <td>{{user.eventImportTimestamp}}</td>
+              <td>{{user.importStatusCode}}</td>
+              <td>{{user.importStatusCode}}</td>
+              <td><button mat-button (click)="openDialog(user.on24EventId)">Registrants</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="    text-align: center;">
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+    </ul>
+  </div>
+
+</section>

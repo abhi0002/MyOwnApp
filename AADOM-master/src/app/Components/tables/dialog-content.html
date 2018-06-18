@@ -1,0 +1,67 @@
+<div style="max-width: '100%';">
+<div class='modal-header'>
+  <mat-dialog-actions style="display: inline;">
+    <h2 class="modal-title">Title</h2>
+    <button style="margin-top: -30px;" class="close" mat-dialog-close>
+      <i class='fa fa-remove
+      '></i>
+    </button>
+    <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+  </mat-dialog-actions>
+</div>
+<mat-dialog-content>
+  <section *ngIf="flagif" id="main-landing" class="bg_grey">
+    <div id="landing_pagesec" class="landing_wrapper">
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table table_view_land">
+            <thead>
+              <tr>
+                <th>weblinkAttendeeId</th>
+                <th>on24EventUserId</th>
+                <th>weblinkAttendeeSignUpDate</th>
+              </tr>
+            </thead>
+            <tbody *ngFor='let user of pagedItems'>
+              <tr>
+                <td>{{user.weblinkAttendeeId }}</td>
+                <td>{{user.on24EventUserId}}</td>
+                <td>{{user.weblinkAttendeeSignUpDate}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="    text-align: center;">
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">First</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Last</a>
+          </li>
+        </ul>
+      </div>
+  </section>
+  <section *ngIf="flagelse" id="main-landing" class="bg_grey">
+      <div id="landing_pagesec" class="landing_wrapper">
+        <div class="container">
+          <div class="table-responsive">
+            <h2>There is no content to show</h2>
+          </div>
+        </div>
+      </div>
+
+    </section>
+</mat-dialog-content>
+</div>

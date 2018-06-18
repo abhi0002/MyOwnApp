@@ -1,0 +1,28 @@
+<app-header></app-header>
+<section id="main-landing" class="bg_grey">
+  <div id="landing_pagesec" class="landing_wrapper">
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table_view_land">
+          <thead>
+            <tr>
+              <th>Weblink EventId</th>
+              <th>on24 EventId</th>
+              <th>Weblink Attendee SignUp Date</th>
+              <th>Status Code</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let user of allRegistrants.responseData">
+            <tr>
+              <td>{{user.weblinkEventId}} </td>
+              <td>{{user.on24EventId}}</td>
+              <td>{{user.weblinkAttendeeSignUpDate}} </td>
+              <td>{{user.statusCode}} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</section>

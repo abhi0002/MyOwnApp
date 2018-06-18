@@ -1,0 +1,62 @@
+<app-header></app-header>
+<section id="main-dashboard">
+  <div class="container">
+    <div class="dashboard_wrapper">
+      <p class="integ_analytic_heading">Interation Analytics</p>
+
+      <div class="col-sm-6">
+        <div class="analytic_box text-center">
+          <div class="analytic_icon_box">
+            <img src="assets/images/events-icon.png">
+          </div>
+          <a routerLink = '/tables'>
+          <div class="analyticbox_content">
+            <p class="analytic_heading_text">Events</p>
+            <p class="analytic_innertext">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p class="analy_inn_no">150/20</p>
+          </div>
+        </a>
+        </div>
+      </div>
+      <div class="col-sm-6">
+
+        <div class="analytic_box text-center">
+          <div class="analytic_icon_box">
+            <img src="/assets/images/group.png">
+          </div>
+        <a>
+          <div class="analyticbox_content">
+            <p class="analytic_heading_text">REGISTRANTS</p>
+            <p class="analytic_innertext">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p class="analy_inn_no">150/20</p>
+          </div>
+        </a>
+        </div>
+      </div>
+        <div class="row clearMargin">
+          <div class=" col-sm-6 ">
+
+            <div class="addTopPadding" >
+              <canvas baseChart
+
+              [data]="pieChartEventData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+            </div>
+        </div>
+          <div class="col-sm-6 ">
+
+            <div class="addTopPadding" >
+              <canvas baseChart [data]="pieChartRegistrantData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

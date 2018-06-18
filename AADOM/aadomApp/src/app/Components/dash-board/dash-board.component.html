@@ -1,29 +1,62 @@
-<div>
-    <div class="container">
-        <div class="text-center">
-            <h1>Angular 2 - Pagination Example with logic like Google</h1>
+<app-header></app-header>
+<section id="main-dashboard">
+  <div class="container">
+    <div class="dashboard_wrapper">
+      <p class="integ_analytic_heading">Interation Analytics</p>
 
-            <!-- items being paged -->
-            <div *ngFor="let item of pagedItems">{{item.title}}</div>
-
-            <!-- pager -->
-            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-                <li [ngClass]="{disabled:pager.currentPage === 1}">
-                    <a (click)="setPage(1)">First</a>
-                </li>
-                <li [ngClass]="{disabled:pager.currentPage === 1}">
-                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
-                </li>
-                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                    <a (click)="setPage(page)">{{page}}</a>
-                </li>
-                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
-                </li>
-                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                    <a (click)="setPage(pager.totalPages)">Last</a>
-                </li>
-            </ul>
+      <div class="col-sm-6">
+        <div class="analytic_box text-center">
+          <div class="analytic_icon_box">
+            <img src="assets/images/events-icon.png">
+          </div>
+          <a routerLink = '/tables'>
+          <div class="analyticbox_content">
+            <p class="analytic_heading_text">Events</p>
+            <p class="analytic_innertext">SuccessFul Events / Failed Events.</p>
+            <p class="analy_inn_no">{{successCountEvent}}/{{failCountEvent}}</p>
+          </div>
+        </a>
         </div>
+      </div>
+      <div class="col-sm-6">
+
+        <div class="analytic_box text-center">
+          <div class="analytic_icon_box">
+            <img src="/assets/images/group.png">
+          </div>
+        <a>
+          <div class="analyticbox_content">
+            <p class="analytic_heading_text">REGISTRANTS</p>
+            <p class="analytic_innertext">Successful Registrants / Failed Registrants.</p>
+            <p class="analy_inn_no">{{successCountRegistrants}}/{{failCountRegistrants}}</p>
+          </div>
+        </a>
+        </div>
+      </div>
+        <div class="row clearMargin">
+          <div class=" col-sm-6 ">
+
+            <div class="addTopPadding" >
+              <canvas baseChart
+
+              [data]="pieChartEventData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+            </div>
+        </div>
+          <div class="col-sm-6 ">
+
+            <div class="addTopPadding" >
+              <canvas baseChart [data]="pieChartRegistrantData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+            </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
